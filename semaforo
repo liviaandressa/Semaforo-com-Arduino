@@ -1,0 +1,59 @@
+//LED de cor AZUL representa o pedestre. Quando a Led vermelha 
+//estiver acesa o pedestre vai passar enquanto o carro (LED laranja)
+//estará apagada
+
+//LED de cor LARANJA representa o carro. Quando a Led verde 
+//estiver acesa o carro vai passar enquanto o pedestre (LED azul)
+//estará apagada
+
+
+#define vermelho 13
+#define amarelo 12
+#define verde 11
+#define azul 3
+#define branco 2
+
+//definindo o tempo que cada led vai ficar aceso (em segundos)
+int tempoVermelho = 5000;
+int tempoAmarelo = 2000;
+int tempoVerde = 5000;
+
+int tempoAzul = 5000;
+int tempoBranco = 5000;
+  
+// define o tipo dos pinos (entrada ou saída)
+void setup()
+{
+  pinMode(vermelho, OUTPUT);
+  pinMode(amarelo, OUTPUT);
+  pinMode(verde, OUTPUT);
+}
+
+void loop()
+{
+ 
+  digitalWrite(vermelho, HIGH); //liga o LED vermelho
+  digitalWrite(azul, HIGH); //liga o LED azul
+  
+  delay(tempoVermelho); // tempo do LED vermelho
+  digitalWrite(vermelho, LOW); //Desliga o Vermelho
+  digitalWrite(azul, LOW); //Desliga o azul
+  
+  digitalWrite(amarelo, HIGH); //liga o LED amarelo
+  delay(tempoAmarelo); // tempo do LED amarelo
+  digitalWrite(amarelo, LOW); //Desliga o amarelo
+  
+  
+  digitalWrite(verde, HIGH); //liga o LED verde
+  digitalWrite(branco, HIGH); //liga o LED branco
+  
+  delay(tempoVerde); // tempo do LED verde
+  digitalWrite(verde, LOW); //Desliga o verde
+  digitalWrite(branco, LOW); //desliga o LED branco
+  
+  
+  digitalWrite(amarelo, HIGH); //liga o LED amarelo
+  delay(tempoAmarelo); // tempo do LED amarelo
+  digitalWrite(amarelo, LOW); //Desliga o amarelo
+  
+}
